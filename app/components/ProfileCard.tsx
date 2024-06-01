@@ -22,8 +22,13 @@ const ProfileCard = ({
   return (
     <Container
       fixed
-      className="bg-slate-100 m-2 rounded-md content-center shadow-md"
-      sx={{ width: "300px", height: "300px" }}
+      className="bg-slate-100 rounded-md content-center shadow-md"
+      sx={{
+        width: "300px",
+        height: "300px",
+        marginTop: { xs: "45%", md: "0" },
+        margin: { md: "16px" },
+      }}
     >
       <Avatar
         className="mx-auto shadow-lg"

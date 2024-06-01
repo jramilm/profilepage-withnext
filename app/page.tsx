@@ -57,10 +57,16 @@ export default function Home({}) {
         display="flex"
         justifyContent="center"
         alignItems="center"
-        flexDirection="row"
         minHeight="100vh"
         sx={{
           backgroundImage: `url(${bg.src})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          height: "100vh",
+          overflow: "hidden",
+          width: "100%",
+          flexDirection: { xs: "column", md: "row" },
         }}
       >
         <ProfileCard
@@ -75,8 +81,8 @@ export default function Home({}) {
           {defBio}
         </BioCard>
         <Box
-          className="flex flex-col justify-start justify-items-start gap-2"
-          sx={{ height: "300px" }}
+          className="flex justify-start justify-items-start gap-2"
+          sx={{ height: "300px", flexDirection: { xs: "row", md: "column" } }}
         >
           <AvatarIconButton btnColor="orange">
             <HomeIcon />

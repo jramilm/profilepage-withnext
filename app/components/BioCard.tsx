@@ -15,7 +15,12 @@ const BioCard = ({ children, bioTitle, bioName }: Props) => {
     <Container
       fixed
       className="flex flex-col m-2 content-center p-5"
-      sx={{ width: "600px", height: "360px", gap: ".5rem" }}
+      sx={{
+        width: { xs: "100%", sm: "600px" },
+        height: "auto",
+        gap: ".5rem",
+        p: { xs: 2, sm: 5 },
+      }}
     >
       <Typography variant="h6" fontStyle={"italic"} fontWeight={"bold"}>
         HELLO! I'M
@@ -34,7 +39,11 @@ const BioCard = ({ children, bioTitle, bioName }: Props) => {
         href="/resume.jpg"
         download="resume.jpg"
         startIcon={<CloudUploadIcon />}
-        sx={{ borderRadius: 8, height: "2rem", width: "13rem" }}
+        sx={{
+          borderRadius: 8,
+          height: "2rem",
+          width: { xs: "100%", sm: "13rem" },
+        }}
       >
         Download Resume
       </Button>
