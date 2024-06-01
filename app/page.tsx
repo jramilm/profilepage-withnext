@@ -28,7 +28,7 @@ export default function Home({}) {
   const [defNum, setDefNum] = useState("0995-056-7449");
   const [defMail, setDefMail] = useState("malatejramil@gmail.com");
   const [defLocation, setDefLocation] = useState("Puerto Princesa City");
-  const [defBio, setDefBio] = useState("I like cats, and I like Maryel.");
+  const [defBio, setDefBio] = useState("I like cats, and I love Maryel.");
 
   const [open, setOpen] = useState(false);
   const handleClickDialog = () => {
