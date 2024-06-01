@@ -64,7 +64,7 @@ export default function Home({}) {
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
           height: "100vh",
-          overflow: "hidden",
+          overflow: "auto",
           width: "100%",
           flexDirection: { xs: "column", md: "row" },
         }}

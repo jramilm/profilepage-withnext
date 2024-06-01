@@ -26,7 +26,7 @@ const ProfileCard = ({
       sx={{
         width: "300px",
         height: "300px",
-        marginTop: { xs: "45%", md: "0" },
+        marginTop: { xxs: "20rem", xs: "10rem", md: "0" },
         margin: { md: "16px" },
       }}
     >
