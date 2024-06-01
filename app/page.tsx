@@ -23,12 +23,12 @@ import { useState } from "react";
 import EditDialog from "./components/EditDialog";
 
 export default function Home({}) {
-  let defName = "Jose Ramil Malate";
-  let defPos = "Computer Programmer";
-  let defNum = "0995-056-7449";
-  let defMail = "malatejramil@gmail.com";
-  let defLocation = "Puerto Princesa City";
-  let defBio = "I like cats, and I like Maryel.";
+  const [defName, setDefName] = useState("Jose Ramil Malate");
+  const [defPos, setDefPos] = useState("Computer Programmer");
+  const [defNum, setDefNum] = useState("0995-056-7449");
+  const [defMail, setDefMail] = useState("malatejramil@gmail.com");
+  const [defLocation, setDefLocation] = useState("Puerto Princesa City");
+  const [defBio, setDefBio] = useState("I like cats, and I like Maryel.");
 
   const [open, setOpen] = useState(false);
   const handleClickDialog = () => {
@@ -40,16 +40,13 @@ export default function Home({}) {
     setOpen(false);
   };
 
-  const handleSubmitForm = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    const formData = new FormData(event.currentTarget);
-    const formJson = Object.fromEntries((formData as any).entries());
-    defName = formJson.name;
-    defPos = formJson.title;
-    defNum = formJson.number;
-    defMail = formJson.email;
-    defLocation = formJson.city;
-    defBio = formJson.bio;
+  const handleSubmitForm = (formData: any) => {
+    setDefName(formData.fullname);
+    setDefPos(formData.title);
+    setDefNum(formData.number);
+    setDefMail(formData.email);
+    setDefLocation(formData.city);
+    setDefBio(formData.bio);
     handleCloseDialog();
   };
 
@@ -92,13 +89,13 @@ export default function Home({}) {
       <EditDialog
         isOpen={open}
         onDialogClose={handleCloseDialog}
-        onSubmitForm={handleSubmitForm}
         name={defName}
         email={defMail}
         title={defPos}
         number={defNum}
         location={defLocation}
         biography={defBio}
+        onSubmitForm={handleSubmitForm}
       />
     </main>
   );

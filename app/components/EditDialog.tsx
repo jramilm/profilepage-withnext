@@ -13,25 +13,25 @@ import {
 interface Props {
   isOpen: boolean;
   onDialogClose: () => void;
-  onSubmitForm: (event: React.FormEvent<HTMLFormElement>) => void;
   name: string;
   title: string;
   number: string;
   location: string;
   biography?: string;
   email: string;
+  onSubmitForm: (formData: any) => void;
 }
 
 const EditDialog = ({
   isOpen,
   onDialogClose,
-  onSubmitForm,
   name,
   title,
   number,
   location,
   biography,
   email,
+  onSubmitForm,
 }: Props) => {
   return (
     <Dialog
@@ -39,7 +39,13 @@ const EditDialog = ({
       onClose={onDialogClose}
       PaperProps={{
         component: "form",
-        onSubmit: { onSubmitForm },
+        onSubmit: (event: React.FormEvent<HTMLFormElement>) => {
+          event.preventDefault();
+          const formData = new FormData(event.currentTarget);
+          const formJson = Object.fromEntries((formData as any).entries());
+          onSubmitForm(formJson);
+          onDialogClose();
+        },
       }}
     >
       <DialogTitle>Edit Profile</DialogTitle>

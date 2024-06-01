@@ -1,4 +1,4 @@
-import { Container, Typography, Button, Box } from "@mui/material";
+import { Container, Typography, Button, Box, IconButton } from "@mui/material";
 import CloudUploadIcon from "@mui/icons-material/CloudUpload";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import FacebookIcon from "@mui/icons-material/Facebook";
@@ -30,15 +30,22 @@ const BioCard = ({ children, bioTitle, bioName }: Props) => {
       <Button
         className="my-3"
         variant="contained"
+        component="a"
+        href="/resume.jpg"
+        download="resume.jpg"
         startIcon={<CloudUploadIcon />}
         sx={{ borderRadius: 8, height: "2rem", width: "13rem" }}
       >
         Download Resume
       </Button>
-      <Box display={"flex"} gap={"10px"} alignItems={"center"}>
+      <Box display={"flex"} gap={"2px"} alignItems={"center"}>
         <Typography variant="subtitle2">Follow me:</Typography>
-        <GitHubIcon />
-        <FacebookIcon />
+        <IconButton href="https://github.com/jramilm">
+          <GitHubIcon />
+        </IconButton>
+        <IconButton href="https://www.facebook.com/malatejramil">
+          <FacebookIcon />
+        </IconButton>
       </Box>
     </Container>
   );
